@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,7 +7,7 @@
     <meta name="author" content="Fairuz Irgawan Sinaga" />
     <meta
       name="keyword"
-      content="Fairuz Irgawan Sinaga, Web Developer, Fairuz Sinaga, Fairuz, Blog, Fairuz Irgawan Sinaga PTPN, Fairuz Irgawan Sinaga UIN SUSKA, Portfolio, Programmer, Pekanbaru, Riau"
+      content="Fairuz Irgawan Sinaga, Web Developer, Fairuz Sinaga, Portfolio, Programmer, Pekanbaru, Riau"
     />
     <meta
       name="description"
@@ -17,276 +17,910 @@
     <meta name="og:title" content="Portfolio Fairuz Irgawan Sinaga" />
     <title>Fairuz Irgawan Sinaga - Portfolio</title>
     <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      body {
+        font-family: "Inter", system-ui, sans-serif;
+      }
+      .fade-up {
+        opacity: 0;
+        transform: translateY(32px);
+        transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .fade-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Dark mode */
+      html.dark body {
+        background: #0f172a;
+        color: #cbd5e1;
+      }
+      html.dark nav {
+        background: rgba(15, 23, 42, 0.85);
+        border-color: #1e293b;
+      }
+      html.dark #mobile-menu {
+        background: #0f172a;
+        border-color: #1e293b;
+      }
+      html.dark .dark\:bg-slate-900 {
+        background: #0f172a;
+      }
+      html.dark .card {
+        background: #1e293b;
+        border-color: #334155;
+      }
+      html.dark .card:hover {
+        border-color: #475569;
+      }
+      html.dark h1,
+      html.dark h2,
+      html.dark h3,
+      html.dark .stat-num {
+        color: #f1f5f9;
+      }
+      html.dark p,
+      html.dark span:not(.badge):not(.dot):not(.terminal-el) {
+        color: #94a3b8;
+      }
+      html.dark a:not(.btn-primary):not(.social-link):not(.nav-brand) {
+        color: #94a3b8;
+      }
+      html.dark a:hover {
+        color: #38bdf8;
+      }
+      html.dark .icon-box {
+        background: #1e293b;
+      }
+      html.dark .terminal-box {
+        background: #020617;
+      }
+      html.dark .tag {
+        background: #1e293b;
+        border-color: #334155;
+        color: #94a3b8;
+      }
+      html.dark footer {
+        background: #0f172a;
+        border-color: #1e293b;
+      }
+      html.dark .toggle-box {
+        background: #1e293b;
+        border-color: #334155;
+      }
+      html.dark .stat-box {
+        background: #1e293b;
+        border-color: #334155;
+      }
+      html.dark .hero-bg {
+        background: linear-gradient(to bottom, #0f172a, #1e293b);
+      }
+      html.dark .btn-outline {
+        background: #1e293b;
+        border-color: #334155;
+        color: #cbd5e1;
+      }
+      html.dark .btn-outline:hover {
+        border-color: #38bdf8;
+        color: #38bdf8;
+      }
+      html.dark .social-icon {
+        background: #1e293b;
+        color: #94a3b8;
+      }
+      html.dark .social-icon:hover {
+        background: #334155;
+      }
+      html.dark .contact-card {
+        background: #1e293b;
+        border-color: #334155;
+      }
+      html.dark .contact-card:hover {
+        border-color: #475569;
+      }
+      html.dark .skill-card {
+        background: #1e293b;
+        border-color: #334155;
+      }
+      html.dark .skill-card:hover {
+        border-color: #475569;
+      }
+    </style>
   </head>
-  <body class="bg-[#1A120B]">
-    <nav class="h-12"></nav>
-    <div class="container mx-auto">
-      <section id="hero" class="w-full pt-3 text-white">
-        <div class="grid grid-cols-1 lg:grid-cols-5">
-          <div class="flex justify-center col-span-2">
-            <div class="flex flex-col lg:flex-row">
-              <div
-                class="col-span-[0.75] relative h-80 min-w-[13rem] lg:w-[13rem] lg:h-80 mx-0 inline-block before:absolute before:-top-4 before:bottom-0 before:h-full before:w-full before:-left-4 before:-z-10 before:border-green-300 before:border-4 hover:before:blur-sm hover:cursor-pointer before:transition before:ease-in-out before:duration-700 hover:backdrop-opacity-10 hover:backdrop-invert hover:bg-white/30"
-              >
-                <img
-                  src="./src/img/profil.jpeg"
-                  class="h-full w-full hover:scale-110 transition duration-700 ease-in-out"
-                  alt=""
-                />
+  <body class="bg-white text-slate-700 antialiased">
+    <!-- Navbar -->
+    <nav
+      class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-100"
+    >
+      <div
+        class="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 flex items-center justify-between h-16"
+      >
+        <a href="#hero" class="nav-brand flex items-center gap-2.5 group">
+          <span
+            class="flex items-center justify-center w-8 h-8 rounded-lg bg-sky-500 text-white text-sm terminal-el"
+          >
+            <i class="fa-solid fa-terminal"></i>
+          </span>
+          <span
+            class="font-bold text-slate-800 group-hover:text-sky-600 transition-colors"
+            >fairuz<span class="text-sky-500 terminal-el">.</span>dev</span
+          >
+        </a>
+
+        <div class="hidden sm:flex items-center gap-8 text-sm font-medium">
+          <a href="#about" data-i18n="nav_about">Tentang</a>
+          <a href="#skills" data-i18n="nav_skills">Keahlian</a>
+          <a href="#projects" data-i18n="nav_projects">Projek</a>
+          <a href="#contact" data-i18n="nav_contact">Kontak</a>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <!-- Language toggle -->
+          <button
+            id="lang-btn"
+            class="toggle-box flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-200 bg-slate-50 text-xs font-semibold text-slate-600 hover:border-sky-300 transition-colors"
+            title="Ganti bahasa"
+          >
+            <i class="fa-solid fa-globe"></i>
+            <span id="lang-label">ID</span>
+          </button>
+          <!-- Dark mode toggle -->
+          <button
+            id="theme-btn"
+            class="toggle-box flex items-center justify-center w-9 h-9 rounded-lg border border-slate-200 bg-slate-50 text-slate-600 hover:border-sky-300 transition-colors"
+            title="Mode gelap/terang"
+          >
+            <i id="theme-icon" class="fa-solid fa-moon"></i>
+          </button>
+          <!-- Mobile menu button -->
+          <button
+            id="mobile-menu-btn"
+            class="sm:hidden flex items-center justify-center w-9 h-9 rounded-lg border border-slate-200 bg-slate-50 text-slate-600"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile menu -->
+      <div
+        id="mobile-menu"
+        class="hidden sm:hidden border-t border-slate-100 bg-white px-6 pb-4 pt-2 space-y-3 text-sm font-medium"
+      >
+        <a href="#about" class="block" data-i18n="nav_about">Tentang</a>
+        <a href="#skills" class="block" data-i18n="nav_skills">Keahlian</a>
+        <a href="#projects" class="block" data-i18n="nav_projects">Projek</a>
+        <a href="#contact" class="block" data-i18n="nav_contact">Kontak</a>
+      </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16">
+      <!-- Hero -->
+      <section
+        id="hero"
+        class="relative flex items-center pt-12 pb-16 lg:pt-16 lg:pb-24 overflow-hidden"
+      >
+        <div
+          class="hero-bg absolute inset-0 -z-10 bg-gradient-to-b from-slate-50 to-white"
+        ></div>
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full"
+        >
+          <!-- Text -->
+          <div class="order-2 lg:order-1 text-center lg:text-left fade-up">
+            <span
+              class="badge inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-sky-50 text-sky-600 border border-sky-100 mb-5"
+            >
+              <i class="dot fa-solid fa-circle text-[6px] animate-pulse"></i>
+              <span data-i18n="hero_badge">Tersedia untuk bekerja</span>
+            </span>
+            <h1
+              class="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-tight mb-4"
+            >
+              <span data-i18n="hero_greeting">Hai, Saya</span>
+              <span class="text-sky-500 terminal-el">Fairuz</span><br />Irgawan
+              Sinaga
+            </h1>
+            <p
+              class="text-lg text-slate-500 max-w-md mx-auto lg:mx-0 mb-6"
+              data-i18n="hero_desc"
+            >
+              Seorang Web Developer yang membangun aplikasi web modern dan
+              bersih dengan Laravel, Vue.js, React & Tailwind CSS.
+            </p>
+
+            <!-- Terminal -->
+            <div
+              class="terminal-box bg-slate-900 rounded-xl p-4 max-w-md mx-auto lg:mx-0 shadow-xl mb-6"
+            >
+              <div class="flex items-center gap-2 mb-3">
+                <span
+                  class="w-3 h-3 rounded-full bg-red-400 terminal-el"
+                ></span>
+                <span
+                  class="w-3 h-3 rounded-full bg-amber-400 terminal-el"
+                ></span>
+                <span
+                  class="w-3 h-3 rounded-full bg-emerald-400 terminal-el"
+                ></span>
               </div>
-              <div
-                class="flex lg:w-max justify-center lg:flex-col mt-6 lg:mt-0 lg:ms-3"
+              <pre
+                class="text-sm text-slate-300 font-mono leading-relaxed"
+              ><code><span class="text-sky-400 terminal-el">fairuz@dev</span><span class="text-slate-500 terminal-el">:</span><span class="text-violet-400 terminal-el">~</span><span class="text-slate-500 terminal-el">$</span> <span id="command" class="text-white terminal-el"></span><span id="build" class="block text-emerald-400 terminal-el"></span><span id="finish" class="block text-emerald-400 terminal-el"></span></code></pre>
+            </div>
+
+            <!-- Typed output -->
+            <div class="space-y-1.5 max-w-md mx-auto lg:mx-0 mb-6 text-sm">
+              <div id="name"></div>
+              <div id="whoami"></div>
+              <div id="experience"></div>
+            </div>
+
+            <!-- Download Buttons -->
+            <div
+              class="flex flex-wrap justify-center lg:justify-start gap-3 mb-5"
+            >
+              <a
+                href="./src/download/CV FAIRUZ IRGAWAN SINAGA.pdf"
+                download
+                class="btn-primary inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-sky-500 text-white text-sm font-semibold hover:bg-sky-600 transition-colors shadow-lg shadow-sky-500/20"
               >
-                <a
-                  href="https://www.instagram.com/fairuzisng/"
-                  class="mx-2 lg:my-2 hover:text-green-300 hover:scale-125 transition ease-in-out duration-100"
-                >
-                  <i class="fa-brands fa-instagram h-10 w-10"></i>
-                </a>
-                <a
-                  href="https://web.facebook.com/irgha.bonex/"
-                  class="mx-2 lg:my-2 hover:text-green-300 hover:scale-125 transition ease-in-out duration-100"
-                >
-                  <i class="fa-brands fa-facebook h-10 w-10"></i>
-                </a>
-                <a
-                  href=""
-                  class="mx-2 lg:my-2 hover:text-green-300 hover:scale-125 transition ease-in-out duration-100"
-                >
-                  <i class="fa-brands fa-linkedin h-10 w-10"></i>
-                </a>
-                <a
-                  href="https://github.com/fairuzsinaga"
-                  class="mx-2 lg:my-2 hover:text-green-300 hover:scale-125 transition ease-in-out duration-100"
-                >
-                  <i class="fa-brands fa-github h-10 w-10"></i>
-                </a>
-              </div>
+                <i class="fa-solid fa-download"></i>
+                <span data-i18n="btn_cv">Unduh CV</span>
+              </a>
+              <a
+                href="./src/download/PORTFOLIO FAIRUZ IRGAWAN SINAGA.pdf"
+                download
+                class="btn-outline inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-slate-700 text-sm font-semibold border border-slate-200 hover:border-sky-300 hover:text-sky-600 transition-all"
+              >
+                <i class="fa-solid fa-file-lines"></i>
+                <span data-i18n="btn_portfolio">Unduh Portfolio</span>
+              </a>
+            </div>
+
+            <!-- Social -->
+            <div class="flex flex-wrap justify-center lg:justify-start gap-3">
+              <a
+                href="https://www.instagram.com/fairuzisng/"
+                class="social-icon social-link inline-flex items-center justify-center w-10 h-10 rounded-xl bg-slate-100 text-slate-500 hover:bg-pink-50 hover:text-pink-500 transition-all"
+                aria-label="Instagram"
+              >
+                <i class="fa-brands fa-instagram text-lg"></i>
+              </a>
+              <a
+                href="https://web.facebook.com/irgha.bonex/"
+                class="social-icon social-link inline-flex items-center justify-center w-10 h-10 rounded-xl bg-slate-100 text-slate-500 hover:bg-blue-50 hover:text-blue-600 transition-all"
+                aria-label="Facebook"
+              >
+                <i class="fa-brands fa-facebook-f text-lg"></i>
+              </a>
+              <a
+                href="#"
+                class="social-icon social-link inline-flex items-center justify-center w-10 h-10 rounded-xl bg-slate-100 text-slate-500 hover:bg-sky-50 hover:text-sky-600 transition-all"
+                aria-label="LinkedIn"
+              >
+                <i class="fa-brands fa-linkedin-in text-lg"></i>
+              </a>
+              <a
+                href="https://github.com/fairuzsinaga"
+                class="social-icon social-link inline-flex items-center justify-center w-10 h-10 rounded-xl bg-slate-100 text-slate-500 hover:bg-slate-800 hover:text-white transition-all"
+                aria-label="GitHub"
+              >
+                <i class="fa-brands fa-github text-lg"></i>
+              </a>
             </div>
           </div>
-          <div class="mt-10 lg:mt-0 col-span-3">
-            <div class="p-4">
-              <div class="flex">
-                <div class="h-3 w-3 bg-red-500 rounded-full"></div>
-                <div class="h-3 w-3 mx-3 bg-yellow-500 rounded-full"></div>
-                <div class="h-3 w-3 bg-green-500 rounded-full"></div>
-              </div>
-              <div class="mt-4 p-2 bg-gray-900 rounded-lg">
-                <pre
-                  class="text-sm text-white leading-normal"
-                >[fairuz@fairuzsinaga ~]# <span id="command"></span><span class="block" id="build"></span><span class="block" id="finish"></span>
-                  <!-- <span class="text-green-400">user@hostname</span>:<span class="text-blue-400">~</span>$ <span class="text-white">ls -l</span>
-                  total 8
-                  -rw-r--r-- 1 user user   0 Sep  8 10:00 file1.txt
-                  -rw-r--r-- 1 user user   0 Sep  8 10:00 file2.txt
-                  -rw-r--r-- 1 user user   0 Sep  8 10:00 file3.txt -->
-                  </pre>
-              </div>
-            </div>
-            <div class="px-3 md:px-0 lg:ps-5 xl:ps-0">
-              <table>
-                <tbody>
-                  <tr>
-                    <td id="name"></td>
-                  </tr>
-                  <tr>
-                    <!-- <td class="font-extrabold font-text text-2xl lg:text-3xl hidden md:inline-block">2</td> -->
-                    <td id="whoami"></td>
-                  </tr>
-                  <tr>
-                    <!-- <td class="font-extrabold font-text text-2xl lg:text-3xl hidden md:inline-block">3</td> -->
-                    <td id="experience"></td>
-                  </tr>
-                </tbody>
-              </table>
 
-              <!-- <p class="mt-3 text-sm font-mono">
-                Saya lulusan S1 jurusan Teknik Informatika UIN Suska Riau pada
-                tahun 2023. Sudah berfokus pada dunia IT Programming selama 1
-                tahun.
-              </p> -->
+          <!-- Photo -->
+          <div class="order-1 lg:order-2 flex justify-center fade-up">
+            <img
+              src="./src/img/profil.jpeg"
+              alt="Fairuz Irgawan Sinaga"
+              class="w-56 sm:w-64 lg:w-72 rounded-2xl shadow-2xl"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="py-20 border-t border-slate-100">
+        <div class="fade-up">
+          <div class="flex items-center gap-3 mb-2">
+            <span
+              class="icon-box inline-flex items-center justify-center w-10 h-10 rounded-xl bg-amber-50 text-amber-500 text-lg"
+            >
+              <i class="fa-solid fa-user"></i>
+            </span>
+            <h2
+              class="text-2xl font-bold text-slate-900"
+              data-i18n="about_title"
+            >
+              Tentang Saya
+            </h2>
+          </div>
+          <div class="w-12 h-1 bg-amber-400 rounded-full mb-8 ml-[52px]"></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <p class="text-slate-500 leading-relaxed" data-i18n="about_desc">
+              Saya seorang Web Developer yang berbasis di Pekanbaru, Riau. Saya
+              lulus S1 jurusan Teknik Informatika dari UIN Suska Riau pada tahun
+              2023 dan sudah fokus di dunia IT dan pemrograman selama lebih dari
+              satu tahun. Saya senang membangun aplikasi web dengan tools modern
+              dan kode yang bersih.
+            </p>
+            <div class="grid grid-cols-2 gap-4">
+              <div
+                class="stat-box p-4 rounded-xl bg-slate-50 border border-slate-100 text-center"
+              >
+                <p class="stat-num text-2xl font-bold text-sky-500 mb-1">3+</p>
+                <p
+                  class="text-xs text-slate-400 font-medium uppercase tracking-wide"
+                  data-i18n="stat_exp"
+                >
+                  Tahun Pengalaman
+                </p>
+              </div>
+              <div
+                class="stat-box p-4 rounded-xl bg-slate-50 border border-slate-100 text-center"
+              >
+                <p class="stat-num text-2xl font-bold text-violet-500 mb-1">
+                  2+
+                </p>
+                <p
+                  class="text-xs text-slate-400 font-medium uppercase tracking-wide"
+                  data-i18n="stat_projects"
+                >
+                  Projek
+                </p>
+              </div>
+              <div
+                class="stat-box p-4 rounded-xl bg-slate-50 border border-slate-100 text-center"
+              >
+                <p class="stat-num text-2xl font-bold text-emerald-500 mb-1">
+                  5+
+                </p>
+                <p
+                  class="text-xs text-slate-400 font-medium uppercase tracking-wide"
+                  data-i18n="stat_tech"
+                >
+                  Teknologi
+                </p>
+              </div>
+              <div
+                class="stat-box p-4 rounded-xl bg-slate-50 border border-slate-100 text-center"
+              >
+                <p class="stat-num text-2xl font-bold text-amber-500 mb-1">
+                  S1
+                </p>
+                <p
+                  class="text-xs text-slate-400 font-medium uppercase tracking-wide"
+                  data-i18n="stat_degree"
+                >
+                  Gelar
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="projek" class="mt-10 py-5 mb-2">
-        <div class="flex items-center justify-center mb-10">
-          <span class="h-1 w-1/5 bg-[#D5CEA3]"></span>
-          <h1
-            class="text-center mx-2 text-2xl uppercase font-bold text-[#D5CEA3]"
-          >
-            Projek Saya
-          </h1>
-          <span class="h-1 w-1/5 bg-[#D5CEA3]"></span>
+      <!-- Skills -->
+      <section id="skills" class="py-20 border-t border-slate-100">
+        <div class="fade-up">
+          <div class="flex items-center gap-3 mb-2">
+            <span
+              class="icon-box inline-flex items-center justify-center w-10 h-10 rounded-xl bg-emerald-50 text-emerald-500 text-lg"
+            >
+              <i class="fa-solid fa-layer-group"></i>
+            </span>
+            <h2
+              class="text-2xl font-bold text-slate-900"
+              data-i18n="skills_title"
+            >
+              Keahlian & Tools
+            </h2>
+          </div>
+          <div
+            class="w-12 h-1 bg-emerald-400 rounded-full mb-3 ml-[52px]"
+          ></div>
+          <p class="text-slate-500 mb-10 ml-[52px]" data-i18n="skills_desc">
+            Teknologi dan framework yang saya gunakan.
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            <div
+              class="skill-card group flex flex-col items-center gap-3 p-5 rounded-2xl bg-white border border-slate-100 hover:border-red-200 hover:shadow-lg hover:shadow-red-50/50 transition-all"
+            >
+              <span
+                class="icon-box flex items-center justify-center w-12 h-12 rounded-xl bg-red-50 text-red-500 text-2xl group-hover:scale-110 transition-transform"
+              >
+                <i class="fa-brands fa-laravel"></i>
+              </span>
+              <span class="font-semibold text-sm text-slate-700">Laravel</span>
+              <span class="text-[11px] text-slate-400" data-i18n="skill_laravel"
+                >Backend & API</span
+              >
+            </div>
+            <div
+              class="skill-card group flex flex-col items-center gap-3 p-5 rounded-2xl bg-white border border-slate-100 hover:border-emerald-200 hover:shadow-lg hover:shadow-emerald-50/50 transition-all"
+            >
+              <span
+                class="icon-box flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-50 text-emerald-500 text-2xl group-hover:scale-110 transition-transform"
+              >
+                <i class="fa-brands fa-vuejs"></i>
+              </span>
+              <span class="font-semibold text-sm text-slate-700">Vue.js</span>
+              <span class="text-[11px] text-slate-400">Frontend</span>
+            </div>
+            <div
+              class="skill-card group flex flex-col items-center gap-3 p-5 rounded-2xl bg-white border border-slate-100 hover:border-sky-200 hover:shadow-lg hover:shadow-sky-50/50 transition-all"
+            >
+              <span
+                class="icon-box flex items-center justify-center w-12 h-12 rounded-xl bg-sky-50 text-sky-500 text-2xl group-hover:scale-110 transition-transform"
+              >
+                <i class="fa-brands fa-react"></i>
+              </span>
+              <span class="font-semibold text-sm text-slate-700">React</span>
+              <span class="text-[11px] text-slate-400">Frontend</span>
+            </div>
+            <div
+              class="skill-card group flex flex-col items-center gap-3 p-5 rounded-2xl bg-white border border-slate-100 hover:border-cyan-200 hover:shadow-lg hover:shadow-cyan-50/50 transition-all"
+            >
+              <span
+                class="icon-box flex items-center justify-center w-12 h-12 rounded-xl bg-cyan-50 text-cyan-500 text-2xl group-hover:scale-110 transition-transform"
+              >
+                <i class="fa-solid fa-wind"></i>
+              </span>
+              <span class="font-semibold text-sm text-slate-700">Tailwind</span>
+              <span class="text-[11px] text-slate-400">Utility CSS</span>
+            </div>
+            <div
+              class="skill-card group flex flex-col items-center gap-3 p-5 rounded-2xl bg-white border border-slate-100 hover:border-violet-200 hover:shadow-lg hover:shadow-violet-50/50 transition-all"
+            >
+              <span
+                class="icon-box flex items-center justify-center w-12 h-12 rounded-xl bg-violet-50 text-violet-500 text-2xl group-hover:scale-110 transition-transform"
+              >
+                <i class="fa-brands fa-bootstrap"></i>
+              </span>
+              <span class="font-semibold text-sm text-slate-700"
+                >Bootstrap</span
+              >
+              <span class="text-[11px] text-slate-400">UI Framework</span>
+            </div>
+          </div>
         </div>
-        <div class="grid md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-2 gap-4">
-          <div class="p-3 border-solid border-2 border-[#D5CEA3] rounded-lg">
-            <div class="bg-slate-900 rounded-lg overflow-hidden h-full">
-              <div class="flex justify-center">
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="py-20 border-t border-slate-100">
+        <div class="fade-up">
+          <div class="flex items-center gap-3 mb-2">
+            <span
+              class="icon-box inline-flex items-center justify-center w-10 h-10 rounded-xl bg-violet-50 text-violet-500 text-lg"
+            >
+              <i class="fa-solid fa-folder-open"></i>
+            </span>
+            <h2
+              class="text-2xl font-bold text-slate-900"
+              data-i18n="projects_title"
+            >
+              Projek
+            </h2>
+          </div>
+          <div class="w-12 h-1 bg-violet-400 rounded-full mb-3 ml-[52px]"></div>
+          <p class="text-slate-500 mb-10 ml-[52px]" data-i18n="projects_desc">
+            Aplikasi web pilihan yang telah saya bangun.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- HANA -->
+            <article
+              class="card group rounded-2xl bg-white border border-slate-100 overflow-hidden hover:shadow-xl hover:border-slate-200 transition-all duration-300"
+            >
+              <div class="aspect-video overflow-hidden bg-slate-50">
                 <img
                   src="./src/img/projects/hana login.png"
-                  class="sm:h-56 lg:h-64 w-full"
-                  alt=""
+                  alt="HANA - HR System"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div>
-                <h6
-                  class="font-sans font-bold ps-5 pt-3 text-lg text-white underline"
+              <div class="p-6">
+                <div class="flex items-center gap-2.5 mb-3">
+                  <span
+                    class="icon-box inline-flex items-center justify-center w-7 h-7 rounded-lg bg-sky-50 text-sky-500 text-xs"
+                  >
+                    <i class="fa-solid fa-briefcase"></i>
+                  </span>
+                  <h3 class="font-bold text-slate-800">HANA</h3>
+                  <span
+                    class="badge ml-auto text-xs bg-sky-50 text-sky-600 px-2 py-0.5 rounded-full font-medium"
+                    data-i18n="tag_work"
+                    >Kerja</span
+                  >
+                </div>
+                <p
+                  class="text-slate-500 text-sm leading-relaxed mb-4"
+                  data-i18n="project_hana_desc"
                 >
-                  HANA
-                </h6>
-                <p class="text-white font-sans text-sm px-5 py-3 text-justify">
-                  Sistem untuk pengelolaan sumber daya manusia di PT. PERKEBUNAN
-                  NUSANTARA V yang terdiri dari beberapa fitur
+                  Sistem pengelolaan sumber daya manusia untuk PT. Perkebunan
+                  Nusantara V, dengan beberapa modul untuk operasional SDM.
                 </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="tag text-xs px-2 py-1 rounded-md bg-slate-50 text-slate-500 border border-slate-100"
+                    ><i class="fa-brands fa-laravel mr-1"></i>Laravel</span
+                  >
+                  <span
+                    class="tag text-xs px-2 py-1 rounded-md bg-slate-50 text-slate-500 border border-slate-100"
+                    ><i class="fa-brands fa-vuejs mr-1"></i>Vue.js</span
+                  >
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="p-3 border-solid border-2 border-[#D5CEA3] rounded-lg">
-            <div class="bg-slate-900 rounded-lg overflow-hidden h-full">
-              <div class="flex justify-center">
+            </article>
+
+            <!-- Sistem Pakar -->
+            <article
+              class="card group rounded-2xl bg-white border border-slate-100 overflow-hidden hover:shadow-xl hover:border-slate-200 transition-all duration-300"
+            >
+              <div class="aspect-video overflow-hidden bg-slate-50">
                 <img
                   src="./src/img/projects/sistem pakar diagnosa.jpg"
-                  class="sm:h-56 lg:h-64 w-full"
-                  alt=""
+                  alt="Sistem Pakar"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div>
-                <h6
-                  class="font-sans font-bold ps-5 pt-3 text-lg text-white underline"
+              <div class="p-6">
+                <div class="flex items-center gap-2.5 mb-3">
+                  <span
+                    class="icon-box inline-flex items-center justify-center w-7 h-7 rounded-lg bg-violet-50 text-violet-500 text-xs"
+                  >
+                    <i class="fa-solid fa-brain"></i>
+                  </span>
+                  <h3 class="font-bold text-slate-800">Sistem Pakar</h3>
+                  <span
+                    class="badge ml-auto text-xs bg-violet-50 text-violet-600 px-2 py-0.5 rounded-full font-medium"
+                    data-i18n="tag_academic"
+                    >Akademik</span
+                  >
+                </div>
+                <p
+                  class="text-slate-500 text-sm leading-relaxed mb-4"
+                  data-i18n="project_sp_desc"
                 >
-                  Sistem Pakar
-                </h6>
-                <p class="text-white text-sm font-sans px-5 py-3 text-justify">
-                  Sistem yang dibangun dengan framework laravel dan bootstrap
-                  untuk mendeteksi jenis penyakit kejiwaan pasien melalui
-                  beberapa pertanyaan yang telah disediakan oleh pakar, kemudian
-                  dianalisis dengan metode certainty factor untuk menentukan
-                  penyakit yang sesuai dengan pernyataan pasien
+                  Sistem pakar untuk skrining kesehatan mental. Menggunakan
+                  metode certainty factor untuk menganalisis respons pasien dan
+                  menyarankan kemungkinan kondisi.
                 </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="tag text-xs px-2 py-1 rounded-md bg-slate-50 text-slate-500 border border-slate-100"
+                    ><i class="fa-brands fa-laravel mr-1"></i>Laravel</span
+                  >
+                  <span
+                    class="tag text-xs px-2 py-1 rounded-md bg-slate-50 text-slate-500 border border-slate-100"
+                    ><i class="fa-brands fa-bootstrap mr-1"></i>Bootstrap</span
+                  >
+                </div>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <section id="keahlian" class="mt-10 py-5 mb-2">
-        <div class="flex items-center justify-center">
-          <span class="h-1 w-1/5 bg-[#D5CEA3]"></span>
-          <h1
-            class="text-center mx-2 text-2xl uppercase font-bold text-[#D5CEA3]"
-          >
-            Keahlian Saya
-          </h1>
-          <span class="h-1 w-1/5 bg-[#D5CEA3]"></span>
-        </div>
-        <div class="flex text-white justify-center mt-6">
-          <a
-            href="javascript:void(0)"
-            class="mx-2 lg:my-2 hover:text-red-600 hover:scale-125 transition ease-in-out duration-100"
-          >
-            <i class="fa-brands fa-laravel h-16 w-16"></i>
-          </a>
-          <a
-            href="javascript:void(0)"
-            class="mx-2 lg:my-2 hover:text-green-300 hover:scale-125 transition ease-in-out duration-100"
-          >
-            <i class="fa-brands fa-vuejs h-16 w-16"></i>
-          </a>
-          <a
-            href="javascript:void(0)"
-            class="mx-2 lg:my-2 hover:text-blue-400 hover:scale-125 transition ease-in-out duration-100"
-          >
-            <i class="fa-brands fa-bootstrap h-16 w-16"></i>
-          </a>
+      <!-- Contact -->
+      <section id="contact" class="py-20 border-t border-slate-100">
+        <div class="fade-up">
+          <div class="flex items-center gap-3 mb-2">
+            <span
+              class="icon-box inline-flex items-center justify-center w-10 h-10 rounded-xl bg-sky-50 text-sky-500 text-lg"
+            >
+              <i class="fa-solid fa-paper-plane"></i>
+            </span>
+            <h2
+              class="text-2xl font-bold text-slate-900"
+              data-i18n="contact_title"
+            >
+              Hubungi Saya
+            </h2>
+          </div>
+          <div class="w-12 h-1 bg-sky-400 rounded-full mb-3 ml-[52px]"></div>
+          <p class="text-slate-500 mb-10 ml-[52px]" data-i18n="contact_desc">
+            Terbuka untuk kolaborasi dan kesempatan baru.
+          </p>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <a
+              href="mailto:fairuzirgawan77@gmail.com"
+              class="contact-card flex items-center gap-4 p-5 rounded-2xl bg-white border border-slate-100 hover:border-sky-200 hover:shadow-lg hover:shadow-sky-50/50 transition-all group"
+            >
+              <span
+                class="icon-box flex items-center justify-center w-10 h-10 rounded-xl bg-sky-50 text-sky-500 group-hover:bg-sky-500 group-hover:text-white transition-colors"
+              >
+                <i class="fa-solid fa-envelope text-lg"></i>
+              </span>
+              <div>
+                <p
+                  class="text-xs text-slate-400 font-medium uppercase tracking-wide"
+                >
+                  Email
+                </p>
+                <p class="text-sm font-semibold text-slate-700">
+                  fairuzirgawan77@gmail.com
+                </p>
+              </div>
+            </a>
+            <div
+              class="contact-card flex items-center gap-4 p-5 rounded-2xl bg-white border border-slate-100"
+            >
+              <span
+                class="icon-box flex items-center justify-center w-10 h-10 rounded-xl bg-amber-50 text-amber-500"
+              >
+                <i class="fa-solid fa-location-dot text-lg"></i>
+              </span>
+              <div>
+                <p
+                  class="text-xs text-slate-400 font-medium uppercase tracking-wide"
+                  data-i18n="contact_location_label"
+                >
+                  Lokasi
+                </p>
+                <p class="text-sm font-semibold text-slate-700">
+                  Pekanbaru, Riau
+                </p>
+              </div>
+            </div>
+            <a
+              href="https://github.com/fairuzsinaga"
+              class="contact-card flex items-center gap-4 p-5 rounded-2xl bg-white border border-slate-100 hover:border-slate-300 hover:shadow-lg hover:shadow-slate-50/50 transition-all group"
+            >
+              <span
+                class="icon-box flex items-center justify-center w-10 h-10 rounded-xl bg-slate-100 text-slate-600 group-hover:bg-slate-800 group-hover:text-white transition-colors"
+              >
+                <i class="fa-brands fa-github text-lg"></i>
+              </span>
+              <div>
+                <p
+                  class="text-xs text-slate-400 font-medium uppercase tracking-wide"
+                >
+                  GitHub
+                </p>
+                <p class="text-sm font-semibold text-slate-700">fairuzsinaga</p>
+              </div>
+            </a>
+          </div>
         </div>
       </section>
-    </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-100 bg-slate-50/50">
+      <div
+        class="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 py-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+      >
+        <p class="text-sm text-slate-400">
+          &copy; <span id="year"></span>
+          <span class="font-semibold text-slate-600"
+            >Fairuz Irgawan Sinaga</span
+          >
+        </p>
+        <div class="flex items-center gap-4">
+          <a
+            href="https://www.instagram.com/fairuzisng/"
+            class="social-link text-slate-400 hover:text-pink-500 transition-colors"
+            aria-label="Instagram"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a
+            href="https://web.facebook.com/irgha.bonex/"
+            class="social-link text-slate-400 hover:text-blue-600 transition-colors"
+            aria-label="Facebook"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+          <a
+            href="#"
+            class="social-link text-slate-400 hover:text-sky-600 transition-colors"
+            aria-label="LinkedIn"
+            ><i class="fa-brands fa-linkedin-in"></i
+          ></a>
+          <a
+            href="https://github.com/fairuzsinaga"
+            class="social-link text-slate-400 hover:text-slate-800 transition-colors"
+            aria-label="GitHub"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <script
-      src="https://kit.fontawesome.com/ecaf89d48c.js"
-      crossorigin="anonymous"
-    ></script>
     <script>
-      runScript();
+      // ========== i18n ==========
+      var translations = {
+        id: {
+          nav_about: "Tentang",
+          nav_skills: "Keahlian",
+          nav_projects: "Projek",
+          nav_contact: "Kontak",
+          hero_badge: "Tersedia untuk bekerja",
+          hero_greeting: "Hai, Saya",
+          hero_desc:
+            "Seorang Web Developer yang membangun aplikasi web modern dan bersih dengan Laravel, Vue.js, React & Tailwind CSS.",
+          btn_cv: "Unduh CV",
+          btn_portfolio: "Unduh Portfolio",
+          about_title: "Tentang Saya",
+          about_desc:
+            "Saya seorang Web Developer yang berbasis di Pekanbaru, Riau. Saya lulus S1 jurusan Teknik Informatika dari UIN Suska Riau pada tahun 2023 dan sudah fokus di dunia IT dan pemrograman selama lebih dari satu tahun. Saya senang membangun aplikasi web dengan tools modern dan kode yang bersih.",
+          stat_exp: "Tahun Pengalaman",
+          stat_projects: "Projek",
+          stat_tech: "Teknologi",
+          stat_degree: "Gelar",
+          skills_title: "Keahlian & Tools",
+          skills_desc: "Teknologi dan framework yang saya gunakan.",
+          skill_laravel: "Backend & API",
+          projects_title: "Projek",
+          projects_desc: "Aplikasi web pilihan yang telah saya bangun.",
+          tag_work: "Kerja",
+          tag_academic: "Akademik",
+          project_hana_desc:
+            "Sistem pengelolaan sumber daya manusia untuk PT. Perkebunan Nusantara V, dengan beberapa modul untuk operasional SDM.",
+          project_sp_desc:
+            "Sistem pakar untuk skrining kesehatan mental. Menggunakan metode certainty factor untuk menganalisis respons pasien dan menyarankan kemungkinan kondisi.",
+          contact_title: "Hubungi Saya",
+          contact_desc: "Terbuka untuk kolaborasi dan kesempatan baru.",
+          contact_location_label: "Lokasi",
+          typed_whoami:
+            '<span class="text-slate-500"><i class="fa-solid fa-code text-sky-500 mr-1.5"></i>Web Developer &mdash; Laravel, Vue, React, Tailwind</span>',
+          typed_exp:
+            '<span class="text-slate-500"><i class="fa-solid fa-calendar text-violet-500 mr-1.5"></i>3+ tahun pengalaman profesional</span>',
+        },
+        en: {
+          nav_about: "About",
+          nav_skills: "Skills",
+          nav_projects: "Projects",
+          nav_contact: "Contact",
+          hero_badge: "Available for work",
+          hero_greeting: "Hi, I'm",
+          hero_desc:
+            "A Web Developer crafting clean, modern web applications with Laravel, Vue.js, React & Tailwind CSS.",
+          btn_cv: "Download CV",
+          btn_portfolio: "Download Portfolio",
+          about_title: "About Me",
+          about_desc:
+            "I'm a Web Developer based in Pekanbaru, Riau. I graduated with a Bachelor's degree in Informatics Engineering from UIN Suska Riau in 2023 and have been focused on IT and programming for over a year. I enjoy building web applications with modern tools and clean code.",
+          stat_exp: "Years Exp.",
+          stat_projects: "Projects",
+          stat_tech: "Technologies",
+          stat_degree: "Degree",
+          skills_title: "Skills & Tools",
+          skills_desc: "Technologies and frameworks I work with.",
+          skill_laravel: "Backend & API",
+          projects_title: "Projects",
+          projects_desc: "Selected web applications I've built.",
+          tag_work: "Work",
+          tag_academic: "Academic",
+          project_hana_desc:
+            "Human resource management system for PT. Perkebunan Nusantara V, with multiple modules for HR operations.",
+          project_sp_desc:
+            "Expert system for mental health screening. Uses certainty factor method to analyze patient responses and suggest possible conditions.",
+          contact_title: "Get in Touch",
+          contact_desc: "Open to collaboration and new opportunities.",
+          contact_location_label: "Location",
+          typed_whoami:
+            '<span class="text-slate-500"><i class="fa-solid fa-code text-sky-500 mr-1.5"></i>Web Developer &mdash; Laravel, Vue, React, Tailwind</span>',
+          typed_exp:
+            '<span class="text-slate-500"><i class="fa-solid fa-calendar text-violet-500 mr-1.5"></i>3+ year of professional experience</span>',
+        },
+      };
+
+      var currentLang = localStorage.getItem("lang") || "id";
+
+      function applyLang(lang) {
+        currentLang = lang;
+        localStorage.setItem("lang", lang);
+        document.documentElement.lang = lang;
+        document.getElementById("lang-label").textContent = lang.toUpperCase();
+
+        var t = translations[lang];
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+          var key = el.getAttribute("data-i18n");
+          if (t[key]) el.textContent = t[key];
+        });
+      }
+
+      document
+        .getElementById("lang-btn")
+        .addEventListener("click", function () {
+          applyLang(currentLang === "id" ? "en" : "id");
+        });
+
+      // ========== Dark mode ==========
+      var currentTheme = localStorage.getItem("theme") || "light";
+
+      function applyTheme(theme) {
+        currentTheme = theme;
+        localStorage.setItem("theme", theme);
+        if (theme === "dark") {
+          document.documentElement.classList.add("dark");
+          document.getElementById("theme-icon").className = "fa-solid fa-sun";
+        } else {
+          document.documentElement.classList.remove("dark");
+          document.getElementById("theme-icon").className = "fa-solid fa-moon";
+        }
+      }
+
+      document
+        .getElementById("theme-btn")
+        .addEventListener("click", function () {
+          applyTheme(currentTheme === "light" ? "dark" : "light");
+        });
+
+      // ========== Init ==========
+      document.getElementById("year").textContent = new Date().getFullYear();
+      applyLang(currentLang);
+      applyTheme(currentTheme);
+
+      // Mobile menu toggle
+      document
+        .getElementById("mobile-menu-btn")
+        .addEventListener("click", function () {
+          document.getElementById("mobile-menu").classList.toggle("hidden");
+        });
+      document.querySelectorAll("#mobile-menu a").forEach(function (a) {
+        a.addEventListener("click", function () {
+          document.getElementById("mobile-menu").classList.add("hidden");
+        });
+      });
+
+      // Scroll fade-up animation
+      (function () {
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) entry.target.classList.add("visible");
+            });
+          },
+          { threshold: 0.15 }
+        );
+        document.querySelectorAll(".fade-up").forEach(function (el) {
+          observer.observe(el);
+        });
+      })();
+
+      // ========== Typed.js ==========
       function runScript() {
         new Typed("#command", {
-          strings: [`npm run introduce`],
+          strings: ["npm run introduce"],
           typeSpeed: 50,
           loop: false,
-          loopCount: Infinity,
           showCursor: false,
-          smartBackspace: true,
           onComplete: function () {
-            bulding();
-          },
-        });
-      }
-
-      function bulding() {
-        new Typed("#build", {
-          strings: [`start building ...`],
-          typeSpeed: 0.0001,
-          loop: false,
-          loopCount: Infinity,
-          showCursor: false,
-          smartBackspace: true,
-          onComplete: function () {
-            running();
-          },
-        });
-      }
-
-      function finish() {
-        new Typed("#finish", {
-          strings: [`finished`],
-          typeSpeed: 0.0001,
-          loop: false,
-          loopCount: Infinity,
-          showCursor: false,
-          smartBackspace: true,
-        });
-      }
-
-      function running() {
-        new Typed("#name", {
-          strings: [
-            `<h4 class="font-extrabold font-text text-2xl lg:text-3xl">
-                          <span class="text-4xl text-white">&lt;</span><span class="text-lime-400">FairuzIrgawanSinaga</span><span class="text-4xl text-white">/&gt;</span>
-                        </h4>`,
-          ],
-          typeSpeed: 50,
-          loop: false,
-          loopCount: Infinity,
-          showCursor: false,
-          smartBackspace: true,
-          onComplete: function () {
-            new Typed("#whoami", {
-              strings: [
-                `<h4 class="font-extrabold font-text sm:text-sm md:text-sm lg:text-lg xl:text-2xl mt-3">
-                        <span class="text-white">&lt;</span><span class="text-lime-400">WhoAmI</span><span class="text-white">&gt;</span><span>I'm a Web Developer</span><span class="text-white">&lt;</span>/<span class="text-lime-400">WhoAmI</span><span>&gt;</span>
-                      </h4>`,
-              ],
-              typeSpeed: 50,
+            new Typed("#build", {
+              strings: ["building ..."],
+              typeSpeed: 20,
               loop: false,
-              loopCount: Infinity,
               showCursor: false,
-              smartBackspace: true,
               onComplete: function () {
-                new Typed("#experience", {
-                  strings: [
-                    `<h4 class="font-extrabold font-text sm:text-sm md:text-sm lg:text-lg xl:text-2xl mt-3">
-                        <span class="text-white">&lt;</span><span class="text-lime-400">Experience</span><span class="text-white">&gt;</span><span>1 Year</span><span class="text-white">&lt;</span>/<span class="text-lime-400">Experience</span><span>&gt;</span>
-                      </h4>`,
-                  ],
-                  typeSpeed: 50,
+                new Typed("#finish", {
+                  strings: ["done!"],
+                  typeSpeed: 20,
                   loop: false,
-                  loopCount: Infinity,
                   showCursor: false,
-                  smartBackspace: true,
                   onComplete: function () {
-                    finish();
+                    showInfo();
                   },
                 });
               },
@@ -294,6 +928,35 @@
           },
         });
       }
+
+      function showInfo() {
+        new Typed("#name", {
+          strings: [
+            '<span class="font-bold text-slate-800 text-lg">&lt;FairuzIrgawanSinaga /&gt;</span>',
+          ],
+          typeSpeed: 40,
+          loop: false,
+          showCursor: false,
+          onComplete: function () {
+            new Typed("#whoami", {
+              strings: [translations[currentLang].typed_whoami],
+              typeSpeed: 25,
+              loop: false,
+              showCursor: false,
+              onComplete: function () {
+                new Typed("#experience", {
+                  strings: [translations[currentLang].typed_exp],
+                  typeSpeed: 25,
+                  loop: false,
+                  showCursor: false,
+                });
+              },
+            });
+          },
+        });
+      }
+
+      runScript();
     </script>
   </body>
 </html>

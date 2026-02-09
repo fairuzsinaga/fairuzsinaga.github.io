@@ -19,7 +19,11 @@ module.exports = {
         '2xl': '10rem',
       },
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };
