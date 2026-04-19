@@ -1,3 +1,84 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root {
+  --primary: #f8f9ff;
+  --secondary: #ffffff;
+  --card: #ffffff;
+  --accent-1: #6c63ff;
+  --accent-2: #00d4ff;
+  --text-primary: #1a1a2e;
+  --text-secondary: #6b7280;
+  --nav-bg: rgba(255, 255, 255, 0.8);
+}
+
+.dark {
+  --primary: #0a0a0f;
+  --secondary: #12121a;
+  --card: #1a1a27;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0b8;
+  --nav-bg: rgba(10, 10, 15, 0.8);
+}
+
+body {
+  background-color: var(--primary);
+  color: var(--text-primary);
+  transition:
+    background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: "Inter", sans-serif;
+}
+
+.glassmorphism {
+  background: var(--card);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(108, 99, 255, 0.15);
+}
+.dark .glassmorphism {
+  border: 1px solid rgba(108, 99, 255, 0.2);
+}
+
+.glow-hover:hover {
+  box-shadow: 0 4px 24px rgba(108, 99, 255, 0.3);
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+
+/* Scroll progress */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  z-index: 9999;
+  width: 0%;
+}
+
+/* Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6c63ff, #00d4ff);
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 10000;
+  transition: transform 0.1s;
+}

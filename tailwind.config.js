@@ -1,28 +1,23 @@
-/** @type {import('tailwindcss').Config} */
-
 module.exports = {
-  content: ["./src/**/*.{html,js}", "./*.{html,js}"],
-  purge: {
-    enabled: true,
-    content: [
-      './*.html',
-    ],
-  },
+  content: ["./*.html", "./src/**/*.{js,css}"],
+  darkMode: "class",
   theme: {
-    container: {
-      center: true,
-      padding: {
-        DEFAULT: '1rem',
-        sm: '2rem',
-        lg: '10rem',
-        xl: '10rem',
-        '2xl': '10rem',
-      },
-    },
     extend: {
-      fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
+      colors: {
+        darkPrimary: "#0A0A0F",
+        darkSecondary: "#12121A",
+        darkCard: "#1A1A27",
+        lightPrimary: "#F8F9FF",
+        lightSecondary: "#FFFFFF",
+        lightCard: "#FFFFFF",
+        brandPurple: "#6C63FF",
+        brandCyan: "#00D4FF",
       },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+        mono: ['"Fira Code"', "monospace"],
+      },
+      animation: { "spin-slow": "spin 8s linear infinite" },
     },
   },
   plugins: [],
