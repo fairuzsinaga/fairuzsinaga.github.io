@@ -218,6 +218,7 @@
       <!-- Desktop Links -->
       <div class="hidden sm:flex gap-8 items-center" id="nav-links">
         <a href="#about" class="nav-link" data-i18n="nav_about">Tentang</a>
+        <a href="resume.html" class="nav-link" data-i18n="nav_resume">Resume</a>
         <a href="#skills" class="nav-link" data-i18n="nav_skills">Keahlian</a>
         <a href="#projects" class="nav-link" data-i18n="nav_projects">Projek</a>
         <a href="#contact" class="nav-link" data-i18n="nav_contact">Kontak</a>
@@ -245,6 +246,7 @@
   <!-- Mobile Menu Overlay -->
   <div id="mobile-menu" class="fixed inset-0 z-[45] bg-bg hidden flex-col items-center justify-center gap-8">
     <a href="#about" class="mobile-link font-serif text-[2.25rem] text-muted hover:text-text transition-colors" data-i18n="nav_about">Tentang</a>
+    <a href="resume.html" class="mobile-link font-serif text-[2.25rem] text-muted hover:text-text transition-colors" data-i18n="nav_resume">Resume</a>
     <a href="#skills" class="mobile-link font-serif text-[2.25rem] text-muted hover:text-text transition-colors" data-i18n="nav_skills">Keahlian</a>
     <a href="#projects" class="mobile-link font-serif text-[2.25rem] text-muted hover:text-text transition-colors" data-i18n="nav_projects">Projek</a>
     <a href="#contact" class="mobile-link font-serif text-[2.25rem] text-muted hover:text-text transition-colors" data-i18n="nav_contact">Kontak</a>
@@ -272,7 +274,7 @@
         <a href="#projects" class="group text-[0.9rem] font-medium text-text hover:text-accentWarm transition-colors flex items-center gap-1.5" data-i18n="hero_cta">
           Lihat pekerjaan saya <i class="fa-solid fa-arrow-down transition-transform duration-200 group-hover:translate-y-[3px] text-xs"></i>
         </a>
-        <a href="./src/download/CV FAIRUZ IRGAWAN SINAGA.pdf" download class="dl-link" data-i18n="hero_cv" data-toast="cv">
+        <a href="resume.html" class="dl-link" data-i18n="hero_cv">
           Unduh CV
         </a>
       </div>
@@ -295,6 +297,7 @@
         </div>
       </div>
     </section>
+
 
     <!-- About Section -->
     <section id="about" class="py-24 border-t border-border">
@@ -537,7 +540,7 @@
       <div class="w-full">
         <hr class="border-border mb-8">
         <div class="flex justify-center gap-10">
-          <a href="./src/download/CV FAIRUZ IRGAWAN SINAGA.pdf" download class="dl-link" data-i18n="dl_cv" data-toast="cv">↓ Resume (PDF)</a>
+          <a href="resume.html" class="dl-link" data-i18n="dl_cv">↓ Resume (PDF)</a>
           <a href="./src/download/PORTFOLIO FAIRUZ IRGAWAN SINAGA.pdf" download class="dl-link" data-i18n="dl_port" data-toast="port">↓ Portfolio PDF</a>
         </div>
       </div>
@@ -573,12 +576,13 @@
     // 1. Translations Object
     const translations = {
       id: {
-        nav_about: "Tentang", nav_skills: "Keahlian", nav_projects: "Projek", nav_contact: "Kontak",
+        nav_about: "Tentang", nav_resume: "Resume", nav_skills: "Keahlian", nav_projects: "Projek", nav_contact: "Kontak",
         hero_micro: "Web Developer · Pekanbaru, Riau · Tersedia untuk bekerja",
         hero_l1: "Membangun", hero_l2: "hal-hal untuk", hero_l3: "web.",
         hero_tagline: "Saya menulis kode yang bersih dan peduli terhadap detail yang kebanyakan orang tidak perhatikan.",
         hero_cta: "Lihat pekerjaan saya ↓", hero_cv: "Unduh CV",
         stat_exp_lbl: "Tahun Pengalaman", stat_proj_lbl: "Projek", stat_tech_lbl: "Teknologi",
+        resume_lbl: "Resume",
         about_lbl: "Tentang", about_status: "Tersedia untuk bekerja", about_lang: "Indonesia & English",
         about_h2: "Developer yang peduli terhadap hal-hal kecil.",
         about_p1: "Saya seorang Web Developer berbasis di Pekanbaru, Riau. Lulus S1 Teknik Informatika dari UIN Suska Riau tahun 2023 — dan sejak itu saya fokus membangun aplikasi web yang fungsional sekaligus enak dilihat.",
@@ -601,12 +605,13 @@
         footer_right: "Dirancang & dibangun sendiri.", toast_cv: "✓ Mengunduh CV…", toast_port: "✓ Mengunduh Portfolio…"
       },
       en: {
-        nav_about: "About", nav_skills: "Skills", nav_projects: "Projects", nav_contact: "Contact",
+        nav_about: "About", nav_resume: "Resume", nav_skills: "Skills", nav_projects: "Projects", nav_contact: "Contact",
         hero_micro: "Web Developer · Pekanbaru, Riau · Available for work",
         hero_l1: "Building", hero_l2: "things for", hero_l3: "the web.",
         hero_tagline: "I write clean code and care deeply about the details most people don't notice.",
         hero_cta: "See my work ↓", hero_cv: "Download CV",
         stat_exp_lbl: "Years Experience", stat_proj_lbl: "Projects", stat_tech_lbl: "Technologies",
+        resume_lbl: "Resume",
         about_lbl: "About", about_status: "Available for work", about_lang: "English & Indonesia",
         about_h2: "A developer who gives a damn.",
         about_p1: "I'm a Web Developer based in Pekanbaru, Riau. I graduated with a Bachelor's in Informatics Engineering from UIN Suska Riau in 2023 — and since then I've focused on building web applications that are both functional and pleasant to look at.",
